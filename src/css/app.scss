@@ -1,15 +1,69 @@
+@import "../../node_modules/include-media/dist/_include-media.scss";
 @import "reset";
-@import "variables/variables";
+@import "variables/variables",
+        "variables/fonts",
+        "variables/config",
+        "variables/functions",
+        "variables/mixins";
+
+
 
 /* COMPONENTS */
-@import "components/c-LogoLoader";
+@import "components/c-LogoLoader",
+        "components/c-Introduction.scss";
+
+:root {
+  --currentBGTheme: unset;
+  --currentCOLTheme: unset;
+}
+
+
+/* THEMES */
+.themeOne {
+  --currentBGTheme: #070e9e;
+  --currentCOLTheme: #fff;
+  --currentSupportTheme: #e8333c;
+}
+
+.themeTwo {
+  --currentBGTheme: #f2eeca;
+  --currentCOLTheme: #070e9e;
+  --currentSupportTheme: #ea27c2;
+}
+
+.themeThree {
+  --currentBGTheme: #ede04b;
+  --currentCOLTheme: #b36924;
+  --currentSupportTheme: #a4bcc2;
+}
+
+.themeFour {
+  --currentBGTheme: #000;
+  --currentCOLTheme: #fff;
+  --currentSupportTheme: #a4bcc2;
+}
+
+html {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
 
 body {
-  font-family: Helvetica Neue, sans-serif;
+  font-family: $f-title;
   font-weight: normal;
   font-size: 16px;
   line-height: 1.4;
-  color: #000;
+  color: var(--currentCOLTheme);
+  background-color: var(--currentBGTheme);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }

@@ -1,0 +1,49 @@
+/* ==================================
+    v-spacing()
+================================== */
+$resolution-range-bottom: map-get($breakpoints, small);
+$resolution-range-top: map-get($breakpoints, xxlarge);
+
+@function get-linear-size($mobile-size, $desktop-size) {
+  $a: ($desktop-size - $mobile-size) / ($resolution-range-top - $resolution-range-bottom);
+  $b: -$a * $resolution-range-bottom;
+
+  @return calc(#{$a} * 100vw + #{$b + $mobile-size});
+}
+
+
+/* ==================================================================================
+	used to retreive varbailes from the $six-ccs-variables array
+	$type = type is the name you set for your nested varaible array
+	$size = is the nested variable you wish to get.
+	@returns the value of teh specified variable
+=================================================================================== */
+@function six-css-variables($type, $size) {
+	@return map-get(map-get($six-ccs-variables, $type), $size);
+}
+/* ==================================================================================
+	loops through varbailes from the $six-ccs-variables array & out put css var
+	$value = used to get the correct value
+=================================================================================== */
+@mixin six-css-var-loop($value) {
+	@each $six-key, $six-top-level in $six-ccs-variables {
+		@each $six-child-key, $six-value in $six-top-level {
+			@if $six-child-key == $value {
+				--six-#{$six-key}: #{six-css-variables(#{$six-key}, $size: #{$six-child-key})};
+			}
+		}
+	}
+}
+/* ==================================================================================
+	used to retreive css var based on the breakpoint passed
+	$breakpoint = used to specify media query
+=================================================================================== */
+@mixin six-get-var-loop($breakpoint) {
+	@if $breakpoint == "xsmall" {
+		@include six-css-var-loop($breakpoint);
+	} @else {
+		@include media(">=#{$breakpoint}") {
+			@include six-css-var-loop($breakpoint);
+		}
+	}
+}

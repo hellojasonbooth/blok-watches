@@ -1,3 +1,46 @@
 .c-LogoLoader {
-  background-color: blue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &__animation {
+    @include v-spacing(padding, $VSM2, $VSD4);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+
+    path {
+      fill: var(--currentCOLTheme);
+    }
+  }
+
+  &__logo {
+    @include v-spacing(padding, $VSM2, $VSD4);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    // height: 100%;
+    opacity: 0;
+
+    svg {
+      overflow: inherit;
+      // height: 100vh;
+
+      path,
+      rect {
+        fill: var(--currentCOLTheme);
+      }
+    }
+  }
+
+  #Group_35 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
 }
