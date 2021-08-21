@@ -17,6 +17,20 @@
     }
   }
 
+  &__graphik {
+    opacity: 0;
+
+    &-wrap {
+      @include v-spacing(padding, $VSM2, $VSD4);
+      display: flex;
+      align-items: flex-end;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
   &__logo {
     @include v-spacing(padding, $VSM2, $VSD4);
     position: absolute;

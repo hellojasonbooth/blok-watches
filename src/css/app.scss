@@ -23,24 +23,40 @@
   --currentBGTheme: #070e9e;
   --currentCOLTheme: #fff;
   --currentSupportTheme: #e8333c;
+
+  .graphik-blue {
+    display: none;
+  }
 }
 
 .themeTwo {
   --currentBGTheme: #f2eeca;
   --currentCOLTheme: #070e9e;
   --currentSupportTheme: #ea27c2;
+
+  .graphik-white {
+    display: none;
+  }
 }
 
 .themeThree {
   --currentBGTheme: #ede04b;
   --currentCOLTheme: #b36924;
   --currentSupportTheme: #a4bcc2;
+
+  .graphik-white {
+    display: none;
+  }
 }
 
 .themeFour {
   --currentBGTheme: #000;
   --currentCOLTheme: #fff;
   --currentSupportTheme: #a4bcc2;
+
+  .graphik-blue {
+    display: none;
+  }
 }
 
 html {

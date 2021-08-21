@@ -16,7 +16,13 @@ class LogoLoader extends Component {
 
 		this.lottieAnimation
 
-		this.frags = this.ref.logoStatic.querySelectorAll('.char')
+		this.body = document.querySelector('body')
+
+		this.blueImgs = document.querySelector('.graphik-blue')
+		this.whiteImgs = document.querySelector('.graphik-white')
+
+		this.blueFrags = this.ref.logoStatic.querySelectorAll('.graphik-blue div')
+		this.whiteFrags = this.ref.logoStatic.querySelectorAll('.graphik-white div')
 	}
 
 	mount() {
@@ -28,20 +34,39 @@ class LogoLoader extends Component {
 			autoplay: false,
 			path: this.jsonPath
 		})
-		  
-
 
 		this.lottieAnimation.addEventListener('DOMLoaded', this.animateLogoStateOne.bind(this))
 
-		setTimeout(() => {
-			this.animateLogoStateTwo()
 
-			const masterTl = gsap.timeline()
-				masterTl.add(this.animateLogoStateThree())
-		}, 3000)
+		setTimeout(() => {
+
+			if (this.body.classList.contains('themeOne') || this.body.classList.contains('themeFour')) {
+				this.triggerWhite()
+			} else if(this.body.classList.contains('themeTwo') || this.body.classList.contains('themeThree')) {
+				this.triggerBlue()
+			}
+
+		}, 10)
+
+
 
 
 	}
+
+	triggerBlue() {
+		const masterTl = gsap.timeline()
+		masterTl.add(this.animateLogoStateTwo(), "+=2.8")
+				.add(this.blueStateThree())
+	}
+
+	triggerWhite() {
+		const masterTl = gsap.timeline()
+		masterTl.add(this.animateLogoStateTwo(), "+=2.8")
+				.add(this.whiteStateThree())
+	}
+
+
+
 
 	animateLogoStateOne() {
 		this.lottieAnimation.play()
@@ -60,15 +85,29 @@ class LogoLoader extends Component {
         return tl
 	}
 
-	animateLogoStateThree() {
+	blueStateThree() {
 		const tl = gsap.timeline({
             defaults: { 
             	ease: "circ.inOut",
-            	duration: 1.2,
+            	duration: 1.4,
             },
          })
-		.to(this.frags, {
-			y: "130%",
+		.to(this.blueFrags, {
+			y: "-100vh",
+			stagger: 0.1
+		})
+		return tl
+	}
+
+	whiteStateThree() {
+		const tl = gsap.timeline({
+            defaults: { 
+            	ease: "circ.inOut",
+            	duration: 1.4,
+            },
+         })
+		.to(this.whiteFrags, {
+			y: "-100vh",
 			stagger: 0.1
 		})
 		return tl
