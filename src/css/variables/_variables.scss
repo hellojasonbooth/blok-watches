@@ -1,0 +1,29 @@
+/* ======= BREAKPOINTS ====== */
+$mobile-breakpoint--xs: 355px;
+$mobile-breakpoint: 600px;
+$small-breakpoint: 900px;
+$medium-breakpoint: 1000px;
+
+$body-font--lg: 23px;
+$body-font--sm: 18px;
+
+
+
+
+@mixin mq($width) {
+    @media (max-width: $width) {
+      @content;
+    }
+}
+
+
+@mixin logo-width($size) {
+  width: $size;
+}
+
+
+/* ====== EASING ====== */
+$btn-transition: cubic-bezier(.025,.9,.45,1);
+
+
+
