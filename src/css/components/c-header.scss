@@ -8,6 +8,7 @@
   z-index: 999;
   @include v-spacing(padding, $VSM2, $VSD4);
   @include v-spacing(font-size, 18px, 26px);
+  transform: translateY(-100%);
 
   > div {
     flex: 1;
@@ -18,6 +19,7 @@
     text-align: center;
     display: flex;
     justify-content: center;
+    transform: translateY(-200%);
 
     svg {
       width: 100%;

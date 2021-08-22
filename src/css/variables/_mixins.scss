@@ -49,3 +49,17 @@
   grid-template-columns: repeat(var(--six-cols), 1fr);
   grid-gap: var(--six-gutter);
 }
+
+@mixin button() {
+  font-family: $f-title;
+  outline: none;
+  border: none;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  height: fit-content;
+  background: transparent;
+  cursor: pointer;
+  color: unset;
+  @include v-spacing(font-size, 18px, 26px);
+}

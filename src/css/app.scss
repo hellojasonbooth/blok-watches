@@ -11,10 +11,10 @@
 /* COMPONENTS */
 @import "components/c-LogoLoader",
         "components/c-header",
+        "components/c-footer",
         "components/c-Introduction";
 
 /* Layouts */
-@import "layouts/l-footer";
 
 :root {
   --currentBGTheme: unset;
@@ -99,4 +99,11 @@ body {
 a {
   text-decoration: none;
   color: var(--currentCOLTheme);
+}
+
+/* 
+remove button styling
+============================= */
+button {
+  @include button;
 }

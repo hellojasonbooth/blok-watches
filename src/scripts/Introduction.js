@@ -21,9 +21,9 @@ class Introduction extends Component {
 
 	mount() {
 
-		setTimeout(() => {
+		// setTimeout(() => {
 			this.animateIntroduction()
-		}, 3800)
+		// }, 3800)
 
 		// setTimeout(() => {
 		// 	//this.ref.intro.style.opacity = '1'
@@ -89,6 +89,7 @@ class Introduction extends Component {
          })
 		tl
 		.to(this.ref.animateElement, {
+			delay: 4,
 			y: 0,
 			stagger: 0.3
 		})
