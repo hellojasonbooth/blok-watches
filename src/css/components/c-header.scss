@@ -1,0 +1,32 @@
+.c-Header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  @include v-spacing(padding, $VSM2, $VSD4);
+  @include v-spacing(font-size, 18px, 26px);
+
+  > div {
+    flex: 1;
+  }
+
+  &__logo {
+    max-width: 152px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__toggle {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

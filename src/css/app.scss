@@ -10,7 +10,11 @@
 
 /* COMPONENTS */
 @import "components/c-LogoLoader",
-        "components/c-Introduction.scss";
+        "components/c-header",
+        "components/c-Introduction";
+
+/* Layouts */
+@import "layouts/l-footer";
 
 :root {
   --currentBGTheme: unset;
@@ -27,6 +31,10 @@
   .graphik-blue {
     display: none;
   }
+
+  .graphik-brown {
+    display: none;
+  }
 }
 
 .themeTwo {
@@ -35,6 +43,10 @@
   --currentSupportTheme: #ea27c2;
 
   .graphik-white {
+    display: none;
+  }
+
+  .graphik-brown {
     display: none;
   }
 }
@@ -47,6 +59,10 @@
   .graphik-white {
     display: none;
   }
+
+  .graphik-blue {
+    display: none;
+  }
 }
 
 .themeFour {
@@ -57,16 +73,11 @@
   .graphik-blue {
     display: none;
   }
-}
 
-/* 
-html {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  position: relative;
-} */
+  .graphik-brown {
+    display: none;
+  }
+}
 
 body {
   font-family: $f-title;
@@ -83,4 +94,9 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--currentCOLTheme);
 }

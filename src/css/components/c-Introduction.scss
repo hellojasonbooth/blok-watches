@@ -12,6 +12,7 @@
 
   &__title {
     grid-column: 1 / -1;
+    // opacity: 0;
 
     @include media(">medium") {
       grid-column: 3 / -3;
@@ -21,18 +22,26 @@
       text-align: center;
       @include v-spacing(font-size, 32px, 76px);
       line-height: 1.16;
-
-      span {
-        display: block;
-      }
     }
 
     &-mask {
       overflow: hidden;
+      display: block;
     }
 
     .animates {
+      display: inline-block;
       transform: translateY(110%);
     }
   }
+
+  // .mask {
+  //   overflow: hidden;
+  //   display: block;
+  // }
+
+  // .mask-inner {
+  //   transform: translateY(110%);
+  //   display: inline-block;
+  // }
 }

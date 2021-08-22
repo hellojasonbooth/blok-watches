@@ -20,9 +20,11 @@ class LogoLoader extends Component {
 
 		this.blueImgs = document.querySelector('.graphik-blue')
 		this.whiteImgs = document.querySelector('.graphik-white')
+		this.brownImgs = document.querySelector('.graphik-brown')
 
 		this.blueFrags = this.ref.logoStatic.querySelectorAll('.graphik-blue div')
 		this.whiteFrags = this.ref.logoStatic.querySelectorAll('.graphik-white div')
+		this.brownFrags = this.ref.logoStatic.querySelectorAll('.graphik-brown div')
 	}
 
 	mount() {
@@ -37,21 +39,32 @@ class LogoLoader extends Component {
 
 		this.lottieAnimation.addEventListener('DOMLoaded', this.animateLogoStateOne.bind(this))
 
+		this.checkForTheme()
 
+	}
+
+
+	checkForTheme() {
 		setTimeout(() => {
 
 			if (this.body.classList.contains('themeOne') || this.body.classList.contains('themeFour')) {
+				this.blueImgs.remove()
+				this.brownImgs.remove()
 				this.triggerWhite()
-			} else if(this.body.classList.contains('themeTwo') || this.body.classList.contains('themeThree')) {
+			} else if(this.body.classList.contains('themeTwo')) {
+				this.brownImgs.remove()
+				this.whiteImgs.remove()
 				this.triggerBlue()
+			} else if (this.body.classList.contains('themeThree')) {
+				this.blueImgs.remove()
+				this.whiteImgs.remove()
+				this.triggerBrown()
 			}
 
 		}, 10)
-
-
-
-
 	}
+
+
 
 	triggerBlue() {
 		const masterTl = gsap.timeline()
@@ -65,7 +78,11 @@ class LogoLoader extends Component {
 				.add(this.whiteStateThree())
 	}
 
-
+	triggerBrown() {
+		const masterTl = gsap.timeline()
+		masterTl.add(this.animateLogoStateTwo(), "+=2.8")
+				.add(this.brownStateThree())
+	}
 
 
 	animateLogoStateOne() {
@@ -107,6 +124,20 @@ class LogoLoader extends Component {
             },
          })
 		.to(this.whiteFrags, {
+			y: "-100vh",
+			stagger: 0.1
+		})
+		return tl
+	}
+
+	brownStateThree() {
+		const tl = gsap.timeline({
+            defaults: { 
+            	ease: "circ.inOut",
+            	duration: 1.4,
+            },
+         })
+		.to(this.brownFrags, {
 			y: "-100vh",
 			stagger: 0.1
 		})

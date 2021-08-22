@@ -1,0 +1,11 @@
+.l-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  @include v-spacing(padding, $VSM2, $VSD4);
+  @include v-spacing(font-size, 18px, 26px);
+  line-height: 1;
+}
