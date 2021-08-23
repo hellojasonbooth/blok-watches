@@ -10,7 +10,7 @@
 
 /* COMPONENTS */
 @import "components/c-LogoLoader",
-        "components/c-header",
+        "components/c-Header",
         "components/c-footer",
         "components/c-Introduction";
 
@@ -19,6 +19,7 @@
 :root {
   --currentBGTheme: unset;
   --currentCOLTheme: unset;
+  --currentSupportTheme: unset;
 }
 
 
