@@ -1,9 +1,3 @@
-@keyframes rotate {
-  100% {
-    transform: rotateZ(360deg);
-  }
-}
-
 .c-Header {
   position: fixed;
   top: 0;
@@ -14,6 +8,11 @@
   @include v-spacing(font-size, 18px, 26px);
   height: 100%;
   pointer-events: none;
+
+  a {
+    line-height: 1;
+    display: block;
+  }
 
   &__inner {
     display: flex;
@@ -83,7 +82,7 @@
           height: 600vw;
         }
 
-        @include media(">medium") {
+        @include media(">large") {
           top: -119vw;
           right: -118vw;
           width: 240vw;
@@ -95,6 +94,15 @@
         position: relative;
         z-index: 3;
         pointer-events: all;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        overflow: hidden;
+        @include v-spacing(height, 18px, 24px);
+
+        span span {
+          display: inline-block;
+        }
       }
     }
   }

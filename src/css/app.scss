@@ -39,6 +39,7 @@
 }
 
 .themeTwo {
+  transition: color 0.5s ease;
   --currentBGTheme: #f2eeca;
   --currentCOLTheme: #070e9e;
   --currentSupportTheme: #ea27c2;
@@ -52,7 +53,12 @@
   }
 }
 
+.themeTwo.is-white {
+  --currentCOLTheme: #ffffff;
+}
+
 .themeThree {
+  transition: color 0.5s ease;
   --currentBGTheme: #ede04b;
   --currentCOLTheme: #b36924;
   --currentSupportTheme: #a4bcc2;
@@ -64,6 +70,10 @@
   .graphik-blue {
     display: none;
   }
+}
+
+.themeThree.is-white {
+  --currentCOLTheme: #ffffff;
 }
 
 .themeFour {
