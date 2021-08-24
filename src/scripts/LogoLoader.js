@@ -113,6 +113,9 @@ class LogoLoader extends Component {
 			y: "-100vh",
 			stagger: 0.1
 		})
+		.set(this.element, {
+			display: "none"
+		}) 
 		return tl
 	}
 
@@ -127,6 +130,9 @@ class LogoLoader extends Component {
 			y: "-100vh",
 			stagger: 0.1
 		})
+		.set(this.element, {
+			display: "none"
+		}) 
 		return tl
 	}
 
@@ -141,6 +147,9 @@ class LogoLoader extends Component {
 			y: "-100vh",
 			stagger: 0.1
 		})
+		.set(this.element, {
+			display: "none"
+		}) 
 		return tl
 	}
 

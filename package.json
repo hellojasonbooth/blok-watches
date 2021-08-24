@@ -35,6 +35,7 @@
     "gsap": "^3.7.1",
     "imagemin-optipng": "^8.0.0",
     "imagemin-pngquant": "^9.0.1",
-    "include-media": "^1.4.10"
+    "include-media": "^1.4.10",
+    "include-media-export": "^1.0.3"
   }
 }

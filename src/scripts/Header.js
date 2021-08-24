@@ -1,3 +1,4 @@
+import eventbus from 'gia/eventbus';
 import Component from 'gia/Component'
 import gsap from "gsap"
 
@@ -15,12 +16,18 @@ class Header extends Component {
 			logoRotate: null,
 			emailLink: null,
 			ToggleTextContact: null,
-			ToggleTextInfo: null
+			ToggleTextInfo: null,
+			ContactTitle: null,
+
+			burgerSlice: [],
+			MobToggle: null
 		}
 
 		this.angle = 0
 		this.setInterval
-		this.eventStateHandler = this.triggerStateChange.bind(this)
+
+		this.eventStateHandlerDesktop = this.triggerStateChangeDesktop.bind(this)
+		this.eventStateHandlerMob = this.triggerStateChangeMob.bind(this)
 
 		this.splitWords = [this.ref.ToggleTextContact, this.ref.ToggleTextInfo]
 
@@ -39,9 +46,82 @@ class Header extends Component {
 			this.splitText(word)
 		})
 
-		this.ref.Toggle.addEventListener('click', this.eventStateHandler.bind(this))
+		this.ref.Toggle.addEventListener('click', this.eventStateHandlerDesktop.bind(this))
+
+		this.ref.MobToggle.addEventListener('click', this.triggerStateChangeMob.bind(this))
 
 	}
+
+	triggerStateChangeDesktop() {
+		this.setState({
+			isExpanded: !this.state.isExpanded
+		})
+	}
+
+	triggerStateChangeMob() {
+		this.setState({
+			isMobExpanded: !this.state.isMobExpanded
+		})
+	}
+
+	stateChange(stateChanges) {
+
+		if ('isExpanded' in stateChanges) {
+
+			if (this.state.isExpanded) {
+				this.openContactInfo()
+				this.openOverlay()
+				this.animateTextUp()
+				this.rotateLogo()
+
+				setTimeout(() => {
+					this.checkColourTheme()
+				}, 1000)
+
+				this.setInterval = setInterval(this.rotateLogo.bind(this), 1000)
+			} else {
+				this.closeContactInfo()
+				this.closeOverlay()
+				this.animateTextDown()
+				this.resetLogo()
+
+				setTimeout(() => {
+					this.removeCheckColourTheme()
+				}, 1200)
+			}
+		}
+
+		if ('isMobExpanded' in stateChanges) {
+
+			if (this.state.isMobExpanded) {
+				this.activeBurger()
+				eventbus.emit("mobPanelActive")
+			} else {
+				this.deactiveBurger()
+				eventbus.emit("mobPanelActive")
+			}
+		}
+	}
+
+
+
+	activeBurger() {
+		this.ref.MobToggle.classList.add('is-cooking')
+
+		this.ref.burgerSlice.forEach(slice => {
+			slice.classList.add('is-cooking')
+		})
+	}
+
+	deactiveBurger() {
+		this.ref.MobToggle.classList.remove('is-cooking')
+
+		this.ref.burgerSlice.forEach(slice => {
+			slice.classList.remove('is-cooking')
+		})
+	}
+
+
 
 
 	splitText(content) {
@@ -54,6 +134,8 @@ class Header extends Component {
 		})
 
 	}
+
+
 
 	animateTextUp() {
 
@@ -93,39 +175,9 @@ class Header extends Component {
 	}
 
 
-	triggerStateChange() {
-		this.setState({
-			isExpanded: !this.state.isExpanded
-		})
-	}
 
-	stateChange(stateChanges) {
 
-		if ('isExpanded' in stateChanges) {
 
-			if (this.state.isExpanded) {
-				this.openContactInfo()
-				this.openOverlay()
-				this.animateTextUp()
-				this.rotateLogo()
-
-				setTimeout(() => {
-					this.checkColourTheme()
-				}, 1000)
-
-				this.setInterval = setInterval(this.rotateLogo.bind(this), 1000)
-			} else {
-				this.closeContactInfo()
-				this.closeOverlay()
-				this.animateTextDown()
-				this.resetLogo()
-
-				setTimeout(() => {
-					this.removeCheckColourTheme()
-				}, 1200)
-			}
-		}
-	}
 
 	checkColourTheme() {
 

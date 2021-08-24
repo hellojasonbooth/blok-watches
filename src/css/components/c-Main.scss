@@ -1,0 +1,13 @@
+.c-Main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+  background-color: var(--currentBGTheme);
+
+  &.is-active {
+    transform: translateY(300px);
+  }
+}

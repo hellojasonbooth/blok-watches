@@ -12,166 +12,178 @@
 
 <body>
 
-	<header class="[ c-Header ]" g-component="Header">
+	<nav class="[ c-MobNav ]">
+		<a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+		<a>Contact</a>
+	</nav>
 
-		<div class="[ c-Header__inner ]" g-ref="inner">
-			<div class="[ c-Header__inner-insta ]">
-				<a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-			</div>
-			<div class="[ c-Header__inner-logo ]" g-ref="HeaderLogo">
-				<a href="/">
-					<svg xmlns="http://www.w3.org/2000/svg" width="1845" height="592.459" viewBox="0 0 1845 592.459">
-						<g id="Group_35" data-name="Group 35" transform="translate(-162 -476.345)">
-						<g id="Group_34" data-name="Group 34" transform="translate(162 476.345)">
-							<g id="Group_1" data-name="Group 1" transform="translate(0 0)">
-							<g>
-								<path id="#one" data-name="Group 1" d="M1298.364,747.36,1104.156,517.108l169.135-201.466H1089.785l-92.7,114.873V615.531L1104.157,747.36Z" transform="translate(546.636 -159.065)" fill="var(--currentCOLTheme)"/>
+	<main class="[ c-Main ]" g-component="Main">
+
+		<header class="[ c-Header ]" g-component="Header">
+
+			<div class="[ c-Header__inner ]" g-ref="inner">
+				<div class="[ c-Header__inner-insta ]">
+					<a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+				</div>
+				<div class="[ c-Header__inner-logo ]" g-ref="HeaderLogo">
+					<a href="/">
+						<svg xmlns="http://www.w3.org/2000/svg" width="1845" height="592.459" viewBox="0 0 1845 592.459">
+							<g id="Group_35" data-name="Group 35" transform="translate(-162 -476.345)">
+							<g id="Group_34" data-name="Group 34" transform="translate(162 476.345)">
+								<g id="Group_1" data-name="Group 1" transform="translate(0 0)">
+								<g>
+									<path id="#one" data-name="Group 1" d="M1298.364,747.36,1104.156,517.108l169.135-201.466H1089.785l-92.7,114.873V615.531L1104.157,747.36Z" transform="translate(546.636 -159.065)" fill="var(--currentCOLTheme)"/>
+								</g>
+						
+								<rect id="#three" data-name="Group 1" width="153.259" height="588.354" transform="translate(1339.738 0)" fill="var(--currentCOLTheme)"/>
+
+								<g g-ref="logoRotate" id="logoRotate">
+									<path id="#four" data-name="Group 1" d="M917.557,422.881A221.6,221.6,0,0,0,750.806,313.6V753.649A221.4,221.4,0,0,0,917.557,422.881Z" transform="translate(289.771 -161.192)" fill="var(--currentCOLTheme)"/>
+									<path id="#five" data-name="Group 1" d="M826.271,313.6a221.454,221.454,0,0,0,0,440.05Z" transform="translate(163.579 -161.193)" fill="var(--currentCOLTheme)"/>
+								</g>
+
+								<rect id="#six" data-name="Group 1" width="153.226" height="588.23" transform="translate(537.384 0.065)" fill="var(--currentCOLTheme)"/>
+								<path id="#seven" data-name="Group 1" d="M348.062,315.664h-5.181v431.67h18.383c115.736,0,209.561-93.682,209.561-209.244v0C570.824,415.246,471.089,315.664,348.062,315.664Z" transform="translate(-135.68 -159.042)" fill="var(--currentCOLTheme)"/>
+								<rect id="Group_1-8" data-name="Group 1" width="153.226" height="588.23" transform="translate(0 0.065)" fill="var(--currentCOLTheme)"/>
+								</g>
 							</g>
-					
-							<rect id="#three" data-name="Group 1" width="153.259" height="588.354" transform="translate(1339.738 0)" fill="var(--currentCOLTheme)"/>
-
-							<g g-ref="logoRotate" id="logoRotate">
-								<path id="#four" data-name="Group 1" d="M917.557,422.881A221.6,221.6,0,0,0,750.806,313.6V753.649A221.4,221.4,0,0,0,917.557,422.881Z" transform="translate(289.771 -161.192)" fill="var(--currentCOLTheme)"/>
-								<path id="#five" data-name="Group 1" d="M826.271,313.6a221.454,221.454,0,0,0,0,440.05Z" transform="translate(163.579 -161.193)" fill="var(--currentCOLTheme)"/>
 							</g>
+						</svg>  
+					</a>
+				</div>
+				<div class="[ c-Header__inner-toggle ]">
+					<button g-ref="Toggle">
+						<span g-ref="ToggleTextContact" class="[ toggle-text ]">Contact</span>
+						<span g-ref="ToggleTextInfo" class="[ toggle-text ]">Information</span>
+					</button>
+					<div class="[ c-Header__inner-toggle-expander ]" g-ref="Expander"></div>
+				</div>
 
-							<rect id="#six" data-name="Group 1" width="153.226" height="588.23" transform="translate(537.384 0.065)" fill="var(--currentCOLTheme)"/>
-							<path id="#seven" data-name="Group 1" d="M348.062,315.664h-5.181v431.67h18.383c115.736,0,209.561-93.682,209.561-209.244v0C570.824,415.246,471.089,315.664,348.062,315.664Z" transform="translate(-135.68 -159.042)" fill="var(--currentCOLTheme)"/>
-							<rect id="Group_1-8" data-name="Group 1" width="153.226" height="588.23" transform="translate(0 0.065)" fill="var(--currentCOLTheme)"/>
-							</g>
-						</g>
-						</g>
-					</svg>  
-				</a>
+				<div class="[ c-Header__inner-toggle-mob ]">
+					<button g-ref="MobToggle">
+						<span class="burger-slice slice-one" g-ref="burgerSlice"></span>
+						<span class="burger-slice slice-two" g-ref="burgerSlice"></span>
+						<span class="burger-slice slice-three" g-ref="burgerSlice"></span>
+					</button>
+				</div>
 			</div>
-			<div class="[ c-Header__inner-toggle ]">
-				<button g-ref="Toggle">
-					<span g-ref="ToggleTextContact" class="[ toggle-text ]">Contact</span>
-					<span g-ref="ToggleTextInfo" class="[ toggle-text ]">Information</span>
-				</button>
-				<div class="[ c-Header__inner-toggle-expander ]" g-ref="Expander"></div>
+
+			<div class="[ c-Header__contact ]">
+
+				<h1 g-ref="ContactTitle">
+					<span class="[ c-Header__contact-title-mask ]">
+						<span g-ref="animateElement" class="[ animates ]">NeueHouse, 110 East 25th St,</span>
+					</span>
+					<span class="[ c-Header__contact-title-mask ]">
+						<span g-ref="animateElement" class="[ animates ]">New York City, NY 10010</span>
+					</span>
+				</h1>
+
+				<a class="[ c-Header__contact-email ]" href="mailto:info@blok-nyc.com" g-ref="animateElement">info@blok-nyc.com</a>
 			</div>
+		</header>
 
-			<div class="[ c-Header__inner-toggle-mob ]">
-				<button g-ref="Toggle">|||</button>
-			</div>
-		</div>
+		<div class="[ c-LogoLoader ]" g-component="LogoLoader">
 
+			<div class="[ c-LogoLoader__animation ]" g-ref="logoAnimation"></div>
 
-		<div class="[ c-Header__contact ]">
+			<!-- <div class="[ c-LogoLoader__logo ]" g-ref="logoStatic">
 
-			<h1 g-ref="ContactTitle">
-				<span class="[ c-Header__contact-title-mask ]">
-					<span g-ref="animateElement" class="[ animates ]">NeueHouse, 110 East 25th St,</span>
-				</span>
-				<span class="[ c-Header__contact-title-mask ]">
-					<span g-ref="animateElement" class="[ animates ]">New York City, NY 10010</span>
-				</span>
-			</h1>
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1845 592.459">
 
-			<a class="[ c-Header__contact-email ]" href="mailto:info@blok-nyc.com" g-ref="animateElement">info@blok-nyc.com</a>
-		</div>
-	</header>
-
-	<div class="[ c-LogoLoader ]" g-component="LogoLoader">
-
-		<div class="[ c-LogoLoader__animation ]" g-ref="logoAnimation"></div>
-
-		<!-- <div class="[ c-LogoLoader__logo ]" g-ref="logoStatic">
-
-			<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1845 592.459">
-
-				<g class="char el-01">
-					<rect id="Group_1-8" data-name="Group 1" width="153.226" height="588.23" transform="translate(0 0.065)" fill="#fff"/>
-				</g>
-
-				<g class="char el-02">
-					<path id="#" data-name="Group 1" d="M348.062,315.664h-5.181v431.67h18.383c115.736,0,209.561-93.682,209.561-209.244v0C570.824,415.246,471.089,315.664,348.062,315.664Z" transform="translate(-135.68 -159.042)" fill="#fff"/>
-				</g>
-
-				<g class="char el-03">
-					<rect id="#" data-name="Group 1" width="153.226" height="588.23" transform="translate(537.384 0.065)" fill="#fff"/>
-				</g>
-
-				<g class="char el-04">
-					<path id="#" data-name="Group 1" d="M826.271,313.6a221.454,221.454,0,0,0,0,440.05Z" transform="translate(163.579 -161.193)" fill="#fff"/>
+					<g class="char el-01">
+						<rect id="Group_1-8" data-name="Group 1" width="153.226" height="588.23" transform="translate(0 0.065)" fill="#fff"/>
 					</g>
 
-				<g class="char el-05">
-					<path id="#" data-name="Group 1" d="M917.557,422.881A221.6,221.6,0,0,0,750.806,313.6V753.649A221.4,221.4,0,0,0,917.557,422.881Z" transform="translate(289.771 -161.192)" fill="#fff"/>
-				</g>
+					<g class="char el-02">
+						<path id="#" data-name="Group 1" d="M348.062,315.664h-5.181v431.67h18.383c115.736,0,209.561-93.682,209.561-209.244v0C570.824,415.246,471.089,315.664,348.062,315.664Z" transform="translate(-135.68 -159.042)" fill="#fff"/>
+					</g>
 
-				<g class="char el-06">
-					<rect id="#" data-name="Group 1" width="153.259" height="588.354" transform="translate(1339.738 0)" fill="#fff"/>  
-				</g>
+					<g class="char el-03">
+						<rect id="#" data-name="Group 1" width="153.226" height="588.23" transform="translate(537.384 0.065)" fill="#fff"/>
+					</g>
 
-				<g class="char el-07">
-					<path id="#" data-name="Group 1" d="M1298.364,747.36,1104.156,517.108l169.135-201.466H1089.785l-92.7,114.873V615.531L1104.157,747.36Z" transform="translate(546.636 -159.065)" fill="#fff"/>
-				</g>
+					<g class="char el-04">
+						<path id="#" data-name="Group 1" d="M826.271,313.6a221.454,221.454,0,0,0,0,440.05Z" transform="translate(163.579 -161.193)" fill="#fff"/>
+						</g>
+
+					<g class="char el-05">
+						<path id="#" data-name="Group 1" d="M917.557,422.881A221.6,221.6,0,0,0,750.806,313.6V753.649A221.4,221.4,0,0,0,917.557,422.881Z" transform="translate(289.771 -161.192)" fill="#fff"/>
+					</g>
+
+					<g class="char el-06">
+						<rect id="#" data-name="Group 1" width="153.259" height="588.354" transform="translate(1339.738 0)" fill="#fff"/>  
+					</g>
+
+					<g class="char el-07">
+						<path id="#" data-name="Group 1" d="M1298.364,747.36,1104.156,517.108l169.135-201.466H1089.785l-92.7,114.873V615.531L1104.157,747.36Z" transform="translate(546.636 -159.065)" fill="#fff"/>
+					</g>
+				
+				</svg>  
+
+
+
+
+			</div> -->
 			
-			</svg>  
+			<div class="[ c-LogoLoader__graphik ]" g-ref="logoStatic">
+				<div class="[ c-LogoLoader__graphik-wrap graphik-white ]">
+					<div><img src="./img/white/1-white@2x.png" /></div>
+					<div><img src="./img/white/2-white@2x.png" /></div>
+					<div><img src="./img/white/3-white@2x.png" /></div>
+					<div><img src="./img/white/4-white@2x.png" /></div>
+					<div><img src="./img/white/5-white@2x.png" /></div>
+					<div><img src="./img/white/6-white@2x.png" /></div>
+					<div><img src="./img/white/7-white@2x.png" /></div>
+				</div>
+				<div class="[ c-LogoLoader__graphik-wrap graphik-blue ]">
+					<div><img src="./img/blue/1-blue@2x.png" /></div>
+					<div><img src="./img/blue/2-blue@2x.png" /></div>
+					<div><img src="./img/blue/3-blue@2x.png" /></div>
+					<div><img src="./img/blue/4-blue@2x.png" /></div>
+					<div><img src="./img/blue/5-blue@2x.png" /></div>
+					<div><img src="./img/blue/6-blue@2x.png" /></div>
+					<div><img src="./img/blue/7-blue@2x.png" /></div>
+				</div>
+
+				<div class="[ c-LogoLoader__graphik-wrap graphik-brown ]">
+					<div><img src="./img/brown/1-brown@2x.png" /></div>
+					<div><img src="./img/brown/2-brown@2x.png" /></div>
+					<div><img src="./img/brown/3-brown@2x.png" /></div>
+					<div><img src="./img/brown/4-brown@2x.png" /></div>
+					<div><img src="./img/brown/5-brown@2x.png" /></div>
+					<div><img src="./img/brown/6-brown@2x.png" /></div>
+					<div><img src="./img/brown/7-brown@2x.png" /></div>
+				</div>
 
 
-
-
-		</div> -->
-		
-		<div class="[ c-LogoLoader__graphik ]" g-ref="logoStatic">
-			<div class="[ c-LogoLoader__graphik-wrap graphik-white ]">
-				<div><img src="./img/white/1-white@2x.png" /></div>
-				<div><img src="./img/white/2-white@2x.png" /></div>
-				<div><img src="./img/white/3-white@2x.png" /></div>
-				<div><img src="./img/white/4-white@2x.png" /></div>
-				<div><img src="./img/white/5-white@2x.png" /></div>
-				<div><img src="./img/white/6-white@2x.png" /></div>
-				<div><img src="./img/white/7-white@2x.png" /></div>
 			</div>
-			<div class="[ c-LogoLoader__graphik-wrap graphik-blue ]">
-				<div><img src="./img/blue/1-blue@2x.png" /></div>
-				<div><img src="./img/blue/2-blue@2x.png" /></div>
-				<div><img src="./img/blue/3-blue@2x.png" /></div>
-				<div><img src="./img/blue/4-blue@2x.png" /></div>
-				<div><img src="./img/blue/5-blue@2x.png" /></div>
-				<div><img src="./img/blue/6-blue@2x.png" /></div>
-				<div><img src="./img/blue/7-blue@2x.png" /></div>
-			</div>
-
-			<div class="[ c-LogoLoader__graphik-wrap graphik-brown ]">
-				<div><img src="./img/brown/1-brown@2x.png" /></div>
-				<div><img src="./img/brown/2-brown@2x.png" /></div>
-				<div><img src="./img/brown/3-brown@2x.png" /></div>
-				<div><img src="./img/brown/4-brown@2x.png" /></div>
-				<div><img src="./img/brown/5-brown@2x.png" /></div>
-				<div><img src="./img/brown/6-brown@2x.png" /></div>
-				<div><img src="./img/brown/7-brown@2x.png" /></div>
-			</div>
-
-
-		</div>
-	</div>
-
-	<section class="[ c-Introduction ]" g-component="Introduction">
-
-		<div class="[ c-Introduction__title ]" g-ref="intro">
-			<!-- <h1 g-ref="introTitle">Blok builds the best designed Watch for kids because Time is precious</h1> -->
-			<h1 g-ref="introTitle">
-				<span class="[ c-Introduction__title-mask ]">
-					<span g-ref="animateElement" class="[ animates ]">Blok builds the best designed</span>
-				</span>
-				<span class="[ c-Introduction__title-mask ]">
-					<span g-ref="animateElement" class="[ animates ]">Watch for kids because</span>
-				</span>
-				<span class="[ c-Introduction__title-mask ]">
-					<span g-ref="animateElement" class="[ animates ]">Time is precious</span>
-				</span>
-			</h1>
 		</div>
 
-	</section>
+		<section class="[ c-Introduction ]" g-component="Introduction">
 
-	<footer class="[ c-Footer ]" g-component="Footer">
-		<div>Launching Fall 2021</div>
-	</footer>
+			<div class="[ c-Introduction__title ]" g-ref="intro">
+				<!-- <h1 g-ref="introTitle">Blok builds the best designed Watch for kids because Time is precious</h1> -->
+				<h1 g-ref="introTitle">
+					<span class="[ c-Introduction__title-mask ]">
+						<span g-ref="animateElement" class="[ animates ]">Blok builds the best designed</span>
+					</span>
+					<span class="[ c-Introduction__title-mask ]">
+						<span g-ref="animateElement" class="[ animates ]">Watch for kids because</span>
+					</span>
+					<span class="[ c-Introduction__title-mask ]">
+						<span g-ref="animateElement" class="[ animates ]">Time is precious</span>
+					</span>
+				</h1>
+			</div>
+
+		</section>
+
+		<footer class="[ c-Footer ]" g-component="Footer">
+			<div>Launching Fall 2021</div>
+		</footer>
+
+	</main>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
 	<script src="scripts/app.js"></script>

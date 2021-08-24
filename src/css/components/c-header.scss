@@ -44,7 +44,7 @@
     }
 
     &-logo {
-      max-width: 152px;
+      max-width: 100px;
       text-align: center;
       display: flex;
       justify-content: center;
@@ -52,6 +52,10 @@
       position: relative;
       z-index: 3;
       pointer-events: all;
+
+      @include media(">small") {
+        max-width: 152px;
+      }
 
       svg {
         width: 100%;
@@ -125,6 +129,41 @@
       display: block;
       position: absolute;
       right: 0;
+      top: 5px;
+
+      button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 19px;
+        transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+        transform-origin: center;
+      }
+
+      button.is-cooking {
+        transform: rotate(-180deg);
+      }
+
+      .burger-slice {
+        display: inline-block;
+        width: 32px;
+        height: 3px;
+        background-color: var(--currentCOLTheme);
+        transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+        transform-origin: center;
+      }
+
+      .slice-one.is-cooking {
+        transform: rotate(-45deg) translate(-6px, 6px);
+      }
+
+      .slice-two.is-cooking {
+        transform: scaleX(0);
+      }
+
+      .slice-three.is-cooking {
+        transform: rotate(45deg) translate(-6px, -5px);
+      }
 
       @include media(">small") {
         display: none;
