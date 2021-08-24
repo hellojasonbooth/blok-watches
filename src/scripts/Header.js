@@ -48,6 +48,7 @@ class Header extends Component {
 				this.closeContactInfo()
 				this.closeOverlay()
 				this.ref.logoRotate.classList.remove('ticking')
+				this.ref.logoRotate.style.transform = ''
 			}
 		}
 	}
