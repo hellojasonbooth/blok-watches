@@ -16,6 +16,8 @@ class Header extends Component {
 			emailLink: null
 		}
 
+		this.angle = 0
+		this.setInterval
 		this.eventStateHandler = this.triggerStateChange.bind(this)
 
 	}
@@ -43,12 +45,14 @@ class Header extends Component {
 			if (this.state.isExpanded) {
 				this.openContactInfo()
 				this.openOverlay()
-				this.ref.logoRotate.classList.add('ticking')
+				this.rotateLogo()
+
+				this.setInterval = setInterval(this.rotateLogo.bind(this), 1000)
 			} else {
 				this.closeContactInfo()
 				this.closeOverlay()
-				this.ref.logoRotate.classList.remove('ticking')
-				this.ref.logoRotate.style.transform = ''
+
+				this.resetLogo()
 			}
 		}
 	}
@@ -64,6 +68,17 @@ class Header extends Component {
 			scale: 1,
 		 })
 		 return tl
+	}
+
+	rotateLogo() {
+		this.angle += 10
+		this.ref.logoRotate.style.transform = `rotateZ(${this.angle}deg)`
+	}
+
+	resetLogo() {
+		this.angle = 0
+		this.ref.logoRotate.style.transform = ``
+		clearInterval(this.setInterval)
 	}
 
 	closeOverlay() {
