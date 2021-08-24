@@ -77,7 +77,7 @@ class Header extends Component {
 
 	resetLogo() {
 		this.angle = 0
-		this.ref.logoRotate.style.transform = ``
+		this.ref.logoRotate.style.transform = `rotateZ(${this.angle}deg)`
 		clearInterval(this.setInterval)
 	}
 
