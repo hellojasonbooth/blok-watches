@@ -170,7 +170,7 @@ class Header extends Component {
             },
          })
 		 .to(this.ref.Expander, {
-			delay: 1.4,
+			delay: 1.2,
 			scale: 0,
 		 })
 		 return tl

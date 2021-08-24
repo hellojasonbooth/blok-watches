@@ -23,13 +23,24 @@
     pointer-events: all;
 
     > div {
-      flex: 1;
+      @include media(">small") {
+        flex: 1;
+      }
+    }
+
+    @include media("<small") {
+      justify-content: center;
     }
 
     &-insta {
+      display: none;
       position: relative;
       z-index: 3;
       pointer-events: all;
+
+      @include media(">small") {
+        display: block;
+      }
     }
 
     &-logo {
@@ -58,7 +69,7 @@
     }
 
     &-toggle {
-      display: flex;
+      display: none;
       justify-content: flex-end;
       position: relative;
       pointer-events: all;
@@ -103,6 +114,20 @@
         span span {
           display: inline-block;
         }
+      }
+
+      @include media(">small") {
+        display: flex;
+      }
+    }
+
+    &-toggle-mob {
+      display: block;
+      position: absolute;
+      right: 0;
+
+      @include media(">small") {
+        display: none;
       }
     }
   }
