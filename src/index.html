@@ -15,20 +15,17 @@
 	<nav class="[ c-MobNav ]" g-component="MobNav">
 		<div class="[ c-MobNav__links ]">
 			<a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-			<a g-ref="navLink">Contact</a>
+			<div class="nav-link" g-ref="navLink">
+				<a g-ref="ToggleTextContact" class="[ toggle-text ]">Contact</a>
+				<a g-ref="ToggleTextInfo" class="[ toggle-text ]">Information</a>
+			</div
+			>
 		</div>
 	</nav>
 
 	<main class="[ c-Main ]" g-component="Main">
 
 		<header class="[ c-Header ]" g-component="Header">
-<!-- 
-			<nav class="[ c-Header__mobNav ]" g-ref="MobNav">
-				<div class="[ c-MobNav__links ]">
-					<a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-					<a g-ref="navLink">Contact</a>
-				</div>
-			</nav>		 -->
 
 			<div class="[ c-Header__inner ]" g-ref="inner">
 				<div class="[ c-Header__inner-insta ]">
@@ -90,6 +87,8 @@
 
 				<a class="[ c-Header__contact-email ]" href="mailto:info@blok-nyc.com" g-ref="animateElement">info@blok-nyc.com</a>
 			</div>
+
+			<div class="[ expander-mob ]"></div>
 		</header>
 
 		<div class="[ c-LogoLoader ]" g-component="LogoLoader">

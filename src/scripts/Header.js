@@ -37,6 +37,9 @@ class Header extends Component {
 		this.burgerSlices = document.querySelectorAll('.mob-toggle span')
 		this.burger = document.querySelector('.mob-toggle')
 
+		this.navLink = document.querySelector('.nav-link')
+		this.mobExpander = document.querySelector('.expander-mob')
+
 	}
 
 	mount() {
@@ -53,6 +56,11 @@ class Header extends Component {
 		this.ref.MobToggle.addEventListener('click', this.triggerStateChangeMob.bind(this))
 
 		this.ref.MobToggle.addEventListener('click', this.activeBurger.bind(this))
+
+		// this.navLink.addEventListener('click', () => {
+		// 	//this.openContactInfoMob()
+		// 	// this.openMobileOverlay()
+		// })
 
 	}
 
@@ -314,6 +322,40 @@ class Header extends Component {
 		tl
 		.to(this.ref.animateElement, {
 			y: '110%',
+			stagger: 0.3
+		})
+
+	}
+
+
+
+	// MOBILE
+	// openMobileOverlay() {
+	// 	const tl = gsap.timeline({
+    //         defaults: { 
+    //            ease: "circ.inOut",
+    //            duration: 1.4,
+    //         },
+    //      })
+	// 	 .to(this.mobExpander, {
+	// 		delay: 0.5,
+	// 		scale: 1,
+	// 	 })
+	// 	 return tl
+	// }
+
+	openContactInfoMob() {
+
+		const tl = gsap.timeline({
+            defaults: { 
+               ease: "circ.inOut",
+               duration: 1.6,
+            },
+         })
+		tl
+		.to(this.ref.animateElement, {
+			delay: 0.7,
+			y: 0,
 			stagger: 0.3
 		})
 
