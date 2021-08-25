@@ -40,6 +40,12 @@
   }
 }
 
+.themeOne.is-blue {
+  .c-MobNav a {
+    color: var(--currentBGTheme);
+  }
+}
+
 .themeTwo {
   transition: color 0.5s ease;
   --currentBGTheme: #f2eeca;
@@ -89,6 +95,12 @@
 
   .graphik-brown {
     display: none;
+  }
+}
+
+.themeFour.is-black {
+  .c-MobNav a {
+    color: var(--currentBGTheme);
   }
 }
 

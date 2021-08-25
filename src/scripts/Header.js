@@ -23,6 +23,8 @@ class Header extends Component {
 			MobToggle: null
 		}
 
+		this.mainTag = document.querySelector('main')
+
 		this.angle = 0
 		this.setInterval
 
@@ -96,6 +98,8 @@ class Header extends Component {
 			if (this.state.isMobExpanded) {
 				this.activeBurger()
 				eventbus.emit("mobPanelActive")
+				this.overlayTextBlue()
+				this.overlayTextBlack()
 			} else {
 				this.deactiveBurger()
 				eventbus.emit("mobPanelActive")
@@ -176,6 +180,17 @@ class Header extends Component {
 
 
 
+	overlayTextBlue() {
+		if (this.body.classList.contains('themeOne')) {
+			this.body.classList.add('is-blue')
+		}
+	}
+
+	overlayTextBlack() {
+		if (this.body.classList.contains('themeFour')) {
+			this.body.classList.add('is-black')
+		}
+	}
 
 
 
@@ -252,6 +267,9 @@ class Header extends Component {
 		 .to(this.ref.HeaderLogo, {
 			delay: 3.8,
 			y: 0
+		 })
+		 .set(this.ref.MobToggle, {
+			 pointerEvents: 'all'
 		 })
 		 return tl
 	}
