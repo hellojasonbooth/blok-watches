@@ -12,16 +12,23 @@
 
 <body>
 
-	<nav class="[ c-MobNav ]" g-ref="MobNav">
+	<nav class="[ c-MobNav ]" g-component="MobNav">
 		<div class="[ c-MobNav__links ]">
 			<a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-			<a g-ref="">Contact</a>
+			<a g-ref="navLink">Contact</a>
 		</div>
 	</nav>
 
 	<main class="[ c-Main ]" g-component="Main">
 
 		<header class="[ c-Header ]" g-component="Header">
+<!-- 
+			<nav class="[ c-Header__mobNav ]" g-ref="MobNav">
+				<div class="[ c-MobNav__links ]">
+					<a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+					<a g-ref="navLink">Contact</a>
+				</div>
+			</nav>		 -->
 
 			<div class="[ c-Header__inner ]" g-ref="inner">
 				<div class="[ c-Header__inner-insta ]">
@@ -62,7 +69,7 @@
 				</div>
 
 				<div class="[ c-Header__inner-toggle-mob ]">
-					<button g-ref="MobToggle">
+					<button class="mob-toggle" g-ref="MobToggle">
 						<span class="burger-slice slice-one" g-ref="burgerSlice"></span>
 						<span class="burger-slice slice-two" g-ref="burgerSlice"></span>
 						<span class="burger-slice slice-three" g-ref="burgerSlice"></span>

@@ -214,6 +214,20 @@
     }
   }
 
+  &__mobNav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+
+    @include media(">small") {
+      display: none;
+    }
+  }
+
   // &__expander {
   //   position: fixed;
   //   top: -100vw;

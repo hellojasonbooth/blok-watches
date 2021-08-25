@@ -34,6 +34,8 @@ class Header extends Component {
 		this.splitWords = [this.ref.ToggleTextContact, this.ref.ToggleTextInfo]
 
 		this.body = document.querySelector('body')
+		this.burgerSlices = document.querySelectorAll('.mob-toggle span')
+		this.burger = document.querySelector('.mob-toggle')
 
 	}
 
@@ -43,14 +45,14 @@ class Header extends Component {
 		this.animateHeader()
 		this.animateLogo()
 
-
 		this.splitWords.forEach(word => {
 			this.splitText(word)
 		})
 
 		this.ref.Toggle.addEventListener('click', this.eventStateHandlerDesktop.bind(this))
-
 		this.ref.MobToggle.addEventListener('click', this.triggerStateChangeMob.bind(this))
+
+		this.ref.MobToggle.addEventListener('click', this.activeBurger.bind(this))
 
 	}
 
@@ -96,34 +98,44 @@ class Header extends Component {
 		if ('isMobExpanded' in stateChanges) {
 
 			if (this.state.isMobExpanded) {
-				this.activeBurger()
 				eventbus.emit("mobPanelActive")
 				this.overlayTextBlue()
 				this.overlayTextBlack()
 			} else {
-				this.deactiveBurger()
 				eventbus.emit("mobPanelActive")
 			}
 		}
-	}
 
+	}
 
 
 	activeBurger() {
-		this.ref.MobToggle.classList.add('is-cooking')
 
-		this.ref.burgerSlice.forEach(slice => {
-			slice.classList.add('is-cooking')
-		})
+
+		if (this.mainTag.classList.contains('is-active')) {
+			this.ref.MobToggle.classList.add('is-cooking')
+
+			this.ref.burgerSlice.forEach(slice => {
+				slice.classList.add('is-cooking')
+			})
+		} else {
+			this.ref.MobToggle.classList.remove('is-cooking')
+
+			this.ref.burgerSlice.forEach(slice => {
+				slice.classList.remove('is-cooking')
+			})
+		}
+		
 	}
 
-	deactiveBurger() {
-		this.ref.MobToggle.classList.remove('is-cooking')
+	// deactiveBurger() {
 
-		this.ref.burgerSlice.forEach(slice => {
-			slice.classList.remove('is-cooking')
-		})
-	}
+	// 	this.ref.MobToggle.classList.remove('is-cooking')
+
+	// 	this.ref.burgerSlice.forEach(slice => {
+	// 		slice.classList.remove('is-cooking')
+	// 	})
+	// }
 
 
 
@@ -138,7 +150,6 @@ class Header extends Component {
 		})
 
 	}
-
 
 
 	animateTextUp() {

@@ -1,6 +1,5 @@
 import eventbus from 'gia/eventbus';
 import Component from 'gia/Component'
-import gsap from "gsap"
 
 class Main extends Component {
 
