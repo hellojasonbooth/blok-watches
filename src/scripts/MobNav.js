@@ -16,12 +16,14 @@ class MobNav extends Component {
 
 		this.eventStateHandler = this.triggerStateChange.bind(this)
 
+		this.body = document.querySelector('body')
+
 		this.burgerSlices = document.querySelectorAll('.mob-toggle span')
 		this.burger = document.querySelector('.mob-toggle')
 
 		this.links = this.ref.navLink.querySelectorAll('a')
 
-		this.titleText = document.querySelectorAll('.c-Header__contact .animates')
+		this.titleText = document.querySelectorAll('.c-Header__contact .animates, .c-Header__contact-email')
 
 		this.mobExpander = document.querySelector('.expander-mob')
 
@@ -43,9 +45,6 @@ class MobNav extends Component {
 
 		this.ref.navLink.addEventListener('click', this.eventStateHandler)
 
-		// this.ref.ToggleTextContact.addEventListener('click', this.openMobileOverlay)
-		// this.ref.ToggleTextInfo.addEventListener('click', this.closeMobileOverlay)
-
 	}
 
 
@@ -65,11 +64,20 @@ class MobNav extends Component {
 				this.swapTextUp()
 				this.openMobileOverlay()
 				this.openContactInfoMob()
+
+				setTimeout(() => {
+					this.overlayTextWhite()
+				}, 1000)
+
 			} else {
 				this.swapTextDown()
 				this.closeMobileOverlay()
 				this.closeContactInfoMob()
 				eventbus.emit("mobPanelActive")
+
+				setTimeout(() => {
+					this.removeOverlayTextWhite()
+				}, 1600)
 			}
 		}
 	}
@@ -95,8 +103,6 @@ class MobNav extends Component {
 
 	openMobileOverlay() {
 
-		// const mobExpander = document.querySelector('.expander-mob')
-
 		const tl = gsap.timeline({
 			defaults: { 
 				ease: "circ.inOut",
@@ -114,17 +120,15 @@ class MobNav extends Component {
 
 	closeMobileOverlay() {
 
-		// const mobExpander = document.querySelector('.expander-mob')
-
 		const tl = gsap.timeline({
 			defaults: { 
 				ease: "circ.inOut",
-				duration: 1.4,
+				duration: 1,
 			},
 		})
 
 		.to(this.mobExpander, {
-			delay: 1,
+			delay: 1.6,
 			scale: 0
 		})
 		return tl
@@ -162,6 +166,17 @@ class MobNav extends Component {
 		})
 		return tl
 
+	}
+
+
+	overlayTextWhite() {
+		if (this.body.classList.contains('themeThree') || this.body.classList.contains('themeTwo')) {
+			this.body.classList.add('is-white')
+		}
+	}
+
+	removeOverlayTextWhite() {
+		this.body.classList.remove('is-white')
 	}
 
 
