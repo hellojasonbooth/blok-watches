@@ -50,6 +50,11 @@ gulp.task("images", function () {
         .pipe(gulp.dest("dist/img"))
 })
 
+gulp.task("icons", function () {
+    return gulp.src("src/icons/*")
+        .pipe(gulp.dest("dist/icons"))
+})
+
 gulp.task("scripts", function () {
     return gulp.src("src/scripts/*.js")
         .pipe(
@@ -80,8 +85,9 @@ gulp.task("watch", function(){
     gulp.watch("src/css/app.scss", ["sass"])
     gulp.watch("src/fonts/*", ["fonts"])
     gulp.watch("src/img/*", ["images"])
+    gulp.watch("src/icons/*", ["icons"])
     gulp.watch("src/scripts/*.js", ["scripts"])
 })
 
-gulp.task('default', ["html", "sass", "fonts", "images", "scripts", "watch"])
+gulp.task('default', ["html", "sass", "fonts", "images", "icons", "scripts", "watch"])
 
