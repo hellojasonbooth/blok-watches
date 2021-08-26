@@ -16,6 +16,9 @@ class MobNav extends Component {
 
 		this.eventStateHandler = this.triggerStateChange.bind(this)
 
+		this.angle = 0
+		this.setInterval
+
 		this.body = document.querySelector('body')
 
 		this.burgerSlices = document.querySelectorAll('.mob-toggle span')
@@ -26,6 +29,8 @@ class MobNav extends Component {
 		this.titleText = document.querySelectorAll('.c-Header__contact .animates, .c-Header__contact-email')
 
 		this.mobExpander = document.querySelector('.expander-mob')
+
+		this.logoRotate = document.querySelector('#logoRotate')
 
 	}
 
@@ -69,17 +74,32 @@ class MobNav extends Component {
 					this.overlayTextWhite()
 				}, 1000)
 
+				this.setInterval = setInterval(this.rotateLogo.bind(this), 1000)
+
 			} else {
 				this.swapTextDown()
 				this.closeMobileOverlay()
 				this.closeContactInfoMob()
 				eventbus.emit("mobPanelActive")
 
+				this.resetLogo()
+
 				setTimeout(() => {
 					this.removeOverlayTextWhite()
 				}, 1600)
 			}
 		}
+	}
+
+	rotateLogo() {
+		this.angle += 10
+		this.logoRotate.style.transform = `rotateZ(${this.angle}deg)`
+	}
+
+	resetLogo() {
+		this.angle = 0
+		this.logoRotate.style.transform = `rotateZ(${this.angle}deg)`
+		clearInterval(this.setInterval)
 	}
 
 	swapTextUp() {
