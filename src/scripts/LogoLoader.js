@@ -11,7 +11,7 @@ class LogoLoader extends Component {
 			logoStatic: null
 		}
 
-		this.jsonPath = 'https://raw.githubusercontent.com/hellojasonbooth/blok-watches/main/src/scripts/data.json?token=AKDZQ25WG2FX6AYYVNQ2DWDBFH736'
+		this.jsonPath = 'https://raw.githubusercontent.com/hellojasonbooth/blok-watches/main/dist/data/data.json?token=AKDZQ2ZD2NIBRLALDF2WNSTBG6VY6'
 
 
 		this.lottieAnimation
