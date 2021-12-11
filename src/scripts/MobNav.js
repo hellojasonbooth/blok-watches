@@ -50,6 +50,14 @@ class MobNav extends Component {
 
 		this.ref.navLink.addEventListener('click', this.eventStateHandler)
 
+		// window.addEventListener('resize', () => {
+		// 	if(window.innerWidth >= 768) {
+		// 		this.setState({
+		// 			isExpanded: false
+		// 		})
+		// 	}
+		// })
+
 	}
 
 

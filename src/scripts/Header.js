@@ -62,6 +62,14 @@ class Header extends Component {
 		// 	// this.openMobileOverlay()
 		// })
 
+		window.addEventListener('resize', () => {
+			if(window.innerWidth <= 768) {
+				this.setState({
+					isExpanded: false
+				})
+			}
+		})
+
 	}
 
 	triggerStateChangeDesktop() {
